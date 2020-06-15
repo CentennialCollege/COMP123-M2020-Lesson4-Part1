@@ -6,40 +6,12 @@ using System.Threading.Tasks;
 
 namespace COMP123_M2020_Lesson4_Part1
 {
-    class Student
+    class Student : Person
     {
         // PRIVATE INSTANCE VARIABLES (FIELDS)
-        private string m_name;
-        private int m_age;
         private string m_studentID;
 
         // PUBLIC PROPERTIES
-        public string Name
-        {
-
-            get // accessor
-            {
-                return m_name;
-            }
-
-            set // mutator
-            {
-                m_name = value;
-            }
-        }
-
-        public int Age
-        {
-            get
-            {
-                return m_age;
-            }
-
-            set
-            {
-                m_age = value;
-            }
-        }
 
         public string StudentID
         {
@@ -58,20 +30,14 @@ namespace COMP123_M2020_Lesson4_Part1
 
         // CONSTRUCTOR
         public Student(string name, int age, string student_id)
+            :base(name, age)
         {
-            m_name = name;
-            m_age = age;
-            m_studentID = student_id;
+            StudentID = student_id;
         }
 
         // PRIVATE METHODS
 
         // PUBLIC METHODS
-        public void SaysHello()
-        {
-            Console.WriteLine($"{Name} says Hello.");
-        }
-
         public void Studies()
         {
             Console.WriteLine($"{Name} is Studying.");
