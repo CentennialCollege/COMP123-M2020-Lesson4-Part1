@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace COMP123_M2020_Lesson4_Part1
 {
-    class Person
+    class Student
     {
         // PRIVATE INSTANCE VARIABLES (FIELDS)
         private string m_name;
         private int m_age;
+        private string m_studentID;
 
         // PUBLIC PROPERTIES
         public string Name
@@ -40,12 +41,27 @@ namespace COMP123_M2020_Lesson4_Part1
             }
         }
 
+        public string StudentID
+        {
+
+            get // accessor
+            {
+                return m_studentID;
+            }
+
+            set // mutator
+            {
+                m_studentID = value;
+            }
+        }
+
 
         // CONSTRUCTOR
-        public Person(string name, int age)
+        public Student(string name, int age, string student_id)
         {
             m_name = name;
             m_age = age;
+            m_studentID = student_id;
         }
 
         // PRIVATE METHODS
@@ -53,7 +69,12 @@ namespace COMP123_M2020_Lesson4_Part1
         // PUBLIC METHODS
         public void SaysHello()
         {
-            Console.WriteLine($"{Name} says Hello");
+            Console.WriteLine($"{Name} says Hello.");
+        }
+
+        public void Studies()
+        {
+            Console.WriteLine($"{Name} is Studying.");
         }
 
         /// <summary>
@@ -66,10 +87,11 @@ namespace COMP123_M2020_Lesson4_Part1
         {
             string outputString = "";
 
-            outputString +=  "\n++++++++++++++++++++++++\n";
-            outputString += $" Name: {Name}         \n";
-            outputString += $" Age : {Age}          \n";
-            outputString +=  "++++++++++++++++++++++++\n";
+            outputString += "\n+++++++++++++++++++++++++++++++\n";
+            outputString += $" Name      : {Name}         \n";
+            outputString += $" Age       : {Age}          \n";
+            outputString += $" StudentID : {StudentID}    \n";
+            outputString += "+++++++++++++++++++++++++++++++\n";
 
             return outputString;
         }
